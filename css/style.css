@@ -1,0 +1,108 @@
+h1 {
+  margin: 1.25em 0;
+  font-size: 3.2rem;
+}
+@media (max-width: 375px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+:root {
+  --font-size-base: 20px;
+  --active-color: #02818A;
+  --text-color-base: #000402;
+  --text-color-second: #012B34;
+  --border-color: #E6E6E6;
+  --duration: .2s;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  font-weight: 400;
+}
+@media (max-width: 1440px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+body {
+  color: var(--text-color-base);
+}
+
+.container {
+  max-width: 1648px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.accordion {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.accordion__item {
+  border-bottom: 1px solid var(--border-color);
+}
+.accordion__item:first-child {
+  border-top: 1px solid var(--border-color);
+}
+
+.accordion__btn {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 1em;
+  width: 100%;
+  padding: 1.5rem 0;
+  border: 0 none;
+  font-size: 1.8rem;
+  text-align: start;
+  color: var(--text-color-second);
+  background: none;
+  transition: color var(--duration);
+  cursor: pointer;
+  outline: none;
+}
+.accordion__btn::after {
+  content: "";
+  display: block;
+  width: 0.55em;
+  height: 0.55em;
+  margin-top: 0.36em;
+  background: center/cover no-repeat url(../icons/plus.svg);
+  transition: transform var(--duration);
+}
+.accordion__btn_active::after {
+  transform: rotate(45deg);
+}
+.accordion__btn:hover, .accordion__btn:focus {
+  color: var(--active-color);
+}
+
+.accordion__content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height var(--duration);
+}
+.accordion__content > :first-child {
+  margin-top: 0;
+}
+.accordion__content > :last-child {
+  margin-bottom: 1.5rem;
+}
+
+/*# sourceMappingURL=style.css.map */
