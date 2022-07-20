@@ -3,9 +3,10 @@ const accordions = document.querySelectorAll('.accordion');
 if (accordions.length) {
   for (const accordion of accordions) {
     accordion.addEventListener('click', function(e) {
-      if (!e.target.classList.contains('accordion__btn')) return;
+      const btn = e.target.closest('.accordion__btn');
 
-      const btn = e.target;
+      if (!btn) return;
+
       const content = btn.nextElementSibling;
 
       if (btn.classList.contains('accordion__btn_active')) {
