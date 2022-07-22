@@ -49,8 +49,8 @@
 
 .accordion__content {
   overflow: hidden;
-  max-height: 0;
-  transition: max-height var(--duration);
+  height: 0;
+  transition: height var(--duration);
 
   & > :first-child { margin-top: 0; }
   & > :last-child { margin-bottom: 1.5rem; }

@@ -95,8 +95,8 @@ body {
 
 .accordion__content {
   overflow: hidden;
-  max-height: 0;
-  transition: max-height var(--duration);
+  height: 0;
+  transition: height var(--duration);
 }
 .accordion__content > :first-child {
   margin-top: 0;

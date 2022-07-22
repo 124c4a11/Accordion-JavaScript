@@ -3,6 +3,8 @@ const accordions = document.querySelectorAll('.accordion');
 if (accordions.length) {
   for (const accordion of accordions) {
     accordion.addEventListener('click', function(e) {
+      e.stopPropagation();
+
       const btn = e.target.closest('.accordion__btn');
 
       if (!btn) return;
@@ -17,10 +19,14 @@ if (accordions.length) {
         btn.setAttribute('aria-expanded', 'true');
       }
 
-      if (content.style.maxHeight) {
-        content.style.maxHeight = null;
+      if (content.style.height) {
+        content.style.height = `${content.scrollHeight}px`;
+
+        setTimeout(() => content.style.height = '', 1);
       } else {
-        content.style.maxHeight = `${content.scrollHeight}px`;
+        content.style.height = `${content.scrollHeight}px`;
+
+        setTimeout(() => content.style.height = 'auto', 200);
       }
     });
   }
